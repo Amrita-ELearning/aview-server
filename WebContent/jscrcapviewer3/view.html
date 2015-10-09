@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>VH Java Media SDK 3 (Demo Viewer)</title>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+	<meta http-equiv="Expires" content="0" /> 
+	<meta http-equiv="Pragma" content="no-cache" /> 
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<link rel="stylesheet" type="text/css" href="./css/default.css" />
+	<link rel="stylesheet" type="text/css" href="./css/room.css" />
+	<link rel="stylesheet" type="text/css" href="./css/ui-lightness/jquery-ui-1.8.7.custom.css" />
+	<script type="text/javascript" src="./js/jquery-1.4.4.min.js"></script>
+	<script type="text/javascript" src="./js/roomControl.js"></script>
+	<script type="text/javascript" src="./js/swfobject.js"></script>
+	<script type="text/javascript" src="./js/BrowserDetect.js"></script>
+</head>
+
+<body>
+	<!-- Viewer Pane with Sidebar -->
+	<div id="paneSidebar" >
+			<div id="flashPlayer">
+			</div>
+	</div>
+	<!--<div class="vhtext" >VH Java Media SDK 3 (Demo Viewer)</div>-->
+	<!-- Bottom Bar -->
+	<div id="bottomBar" class="">
+		<div class="buttonContainer">
+			<div class="button btnHelp"></div>
+			<div class="button btnFullScreen"></div>
+			<div class="button btnPanScreen"></div>
+			<div class="button btnRemoteControl"></div>
+			<div id="audioControl">
+				<div id="audioBtn" class="button btnMute"></div>
+				<div id="sliderBox">
+					<div id="audioControlTxt">Volume</div>
+					<div id="sliderVolume"></div>
+					<div id="setMuteBox"><input type="checkbox" id="setMute" /> Mute</div>
+				</div>
+			</div>
+		</div>
+		<div class="logoContainer">
+			<div class="divider"></div>
+			<div class="logo"><a href="http://www.splitmedialabs.com/" target="_blank"></a></div>
+		</div>
+	</div>
+	<div id="preload">
+	   <img id="01" width="1" height="1" alt="" />
+	   <img id="02" width="1" height="1" alt="" />
+	</div>
+	<!--<script type="text/javascript" src="./js/LoDRightClickTrap.js"></script>-->
+	<script type="text/javascript" src="./js/jquery-ui-1.8.7.custom.min.js"></script>
+</body>
+
+</html>

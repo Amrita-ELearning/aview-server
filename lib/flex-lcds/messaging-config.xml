@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service id="message-service"
+    class="flex.messaging.services.MessageService">
+
+    <adapters>
+        <adapter-definition id="actionscript" class="flex.messaging.services.messaging.adapters.ActionScriptAdapter" default="true" />
+        <adapter-definition id="jms" class="flex.messaging.services.messaging.adapters.JMSAdapter"/>
+    </adapters>
+    
+    <default-channels>
+        <channel ref="my-rtmp"/>
+        <channel ref="my-streaming-amf"/>
+    </default-channels>
+
+    <destination id="feed">
+
+        <properties>
+            <network>
+                <session-timeout>0</session-timeout>
+            </network>
+            <server>
+                <message-time-to-live>0</message-time-to-live>
+                <durable>false</durable>
+            </server>
+        </properties>
+
+    </destination>
+    
+    <destination id="chat">
+
+        <properties>
+            <network>
+                <session-timeout>0</session-timeout>
+            </network>
+            <server>                
+                <message-time-to-live>0</message-time-to-live>
+                <durable>false</durable>
+            </server>
+        </properties>
+
+    </destination>
+    
+
+    <destination id="market-data-feed">
+
+        <properties>
+            <network>
+                <session-timeout>0</session-timeout>
+            </network>
+            <server>                
+                <message-time-to-live>0</message-time-to-live>
+                <durable>true</durable>
+                <allow-subtopics>true</allow-subtopics>
+                <subtopic-separator>.</subtopic-separator>
+            </server>
+        </properties>
+
+        <channels>
+            <channel ref="my-rtmp"/>
+            <channel ref="my-nio-amf-poll"/>
+            <channel ref="my-nio-amf-longpoll"/>
+            <channel ref="my-nio-amf-stream"/>
+            <channel ref="my-nio-http-poll"/>
+            <channel ref="my-nio-http-longpoll"/>
+            <channel ref="my-nio-http-stream"/>
+			<channel ref="my-polling-amf"/>
+			<channel ref="my-streaming-amf"/>
+            <channel ref="per-client-qos-rtmp"/>
+            <channel ref="per-client-qos-polling-amf"/>
+        </channels>
+
+    </destination>
+
+    <destination id="dashboard">
+
+        <properties>
+            <network>
+                <session-timeout>0</session-timeout>
+            </network>
+            <server>
+                <message-time-to-live>0</message-time-to-live>
+                <durable>true</durable>
+            </server>
+        </properties>
+
+        <channels>
+            <channel ref="my-rtmp"/>
+        </channels>
+
+    </destination>
+
+</service>

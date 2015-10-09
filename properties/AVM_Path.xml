@@ -1,0 +1,23 @@
+<!-- <servers> <server> <name>LocalTest-Server</name> <lcdsport>8700</lcdsport> 
+	<fmsport>1935</fmsport> <lcdsip>192.168.173.182</lcdsip> <fmsip>192.168.173.182</fmsip> 
+	<fmsInstall>C:\\Program Files\\Adobe\\Flash Media Server 4</fmsInstall> <lcdsIntall>C:\\lcds\jrun4\\servers\\default\\samples\\</lcdsIntall> 
+	<blazeDsInstall>C:\\blazeds-turnkey-4.0.0.14931\\tomcat\\webapps\\aview_meeting\\</blazeDsInstall> 
+	<xmlDestination>XmlDatas</xmlDestination> </server> </servers> -->
+<AVMRootPath>
+<!--
+	<ContentServerPath>
+		<xmlPath>C:\\BlazeDS4.0\\tomcat\\webapps\\AVMContent\\</xmlPath>
+		<fmsSourcePath>C:\\Program Files\\Adobe\\Flash Media Server 4\\applications\\AVMStreamManager\\streams\\</fmsSourcePath>
+		<fmsDestinationPath>C:\\Program Files\\Adobe\\Flash Media Server 4\\webroot\\vod\\</fmsDestinationPath>
+	</ContentServerPath>
+-->	
+	<ContentServerPath>
+		<winXmlPath>D:/BlazeDS4.0/tomcat/webapps/AVMContent/</winXmlPath>
+		<winFmsSourcePath>C:/Program Files/Adobe/Flash Media Server 4/applications/AVMStreamManager/streams/</winFmsSourcePath>
+		<winFmsDestinationPath>C:/Program Files/Adobe/Flash Media Server 4/webroot/vod/</winFmsDestinationPath>
+		<linXmlPath>/opt/tomcat/webapps/AVMContent/</linXmlPath>
+		<linFmsSourcePath>/opt/adobe/fms/applications/AVMStreamManager/streams/</linFmsSourcePath>
+		<linFmsDestinationPath>/opt/adobe/fms/webroot/vod/</linFmsDestinationPath>
+	</ContentServerPath>
+	
+</AVMRootPath>

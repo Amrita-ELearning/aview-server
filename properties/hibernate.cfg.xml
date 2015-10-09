@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+	~ Hibernate, Relational Persistence for Idiomatic Java
+	~
+	~ Copyright (c) 2010, Red Hat Inc. or third-party contributors as
+	~ indicated by the @author tags or express copyright attribution
+	~ statements applied by the authors.  All third-party contributions are
+	~ distributed under license by Red Hat Inc.
+	~
+	~ This copyrighted material is made available to anyone wishing to use, modify,
+	~ copy, or redistribute it subject to the terms and conditions of the GNU
+	~ Lesser General Public License, as published by the Free Software Foundation.
+	~
+	~ This program is distributed in the hope that it will be useful,
+	~ but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+	~ or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License
+	~ for more details.
+	~
+	~ You should have received a copy of the GNU Lesser General Public License
+	~ along with this distribution; if not, write to:
+	~ Free Software Foundation, Inc.
+	~ 51 Franklin Street, Fifth Floor
+	~ Boston, MA  02110-1301  USA
+-->
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory>
+
+		<!-- Database connection settings -->
+		<property name="connection.driver_class">
+			com.mysql.jdbc.Driver
+		</property>
+		<!-- JDBC connection pool (use the built-in) -->
+		<!--<property name="connection.pool_size">1</property>-->
+
+		<!-- SQL dialect -->
+		<property name="dialect">
+			org.hibernate.dialect.MySQLDialect
+		</property>
+
+		<!-- Disable the second-level cache  -->
+		<property name="cache.provider_class">
+			org.hibernate.cache.NoCacheProvider
+		</property>
+
+		<!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">false</property>
+		
+		<property name="hibernate.jdbc.batch-size">50</property>
+
+		<!-- Properties to resolve Hibernate Exception for LCDS idle timeout -->
+		<property name="hibernate.c3p0.acquire_increment">1</property> 
+		<property name="hibernate.c3p0.min_size">2</property>
+	      <property name="hibernate.c3p0.max_size">10</property>
+      	<property name="hibernate.c3p0.timeout">1800</property>
+      	<property name="hibernate.c3p0.idle_test_period">100</property>
+      	
+      	<!-- Transaction Management -->
+      	<property name="hibernate.current_session_context_class">org.hibernate.context.ThreadLocalSessionContext</property>
+      	
+      	<!--  Added for null values in datetime columns in database -->
+      	<property name="hibernate.connection.zeroDateTimeBehavior">convertToNull</property>
+		<!-- Properties to resolve Hibernate Exception for LCDS idle timeout -->
+
+		<!-- Names the annotated entity class -->
+
+		<mapping class="edu.amrita.aview.gclm.entities.Course" />
+		<mapping class="edu.amrita.aview.gclm.entities.Node" />
+		<mapping class="edu.amrita.aview.gclm.entities.NodeType" />
+		<mapping class="edu.amrita.aview.gclm.entities.Class" />
+		<mapping class="edu.amrita.aview.gclm.entities.User" />
+		<mapping class="edu.amrita.aview.common.entities.Status" />
+		<mapping class="edu.amrita.aview.gclm.entities.Lecture" />
+		<mapping class="edu.amrita.aview.gclm.entities.ClassRegistration" />
+		<mapping class="edu.amrita.aview.common.entities.Country" />
+		<mapping class="edu.amrita.aview.common.entities.District" />
+		<mapping class="edu.amrita.aview.gclm.entities.Institute" />
+		<mapping class="edu.amrita.aview.gclm.entities.InstituteAdminUser" />
+		<mapping class="edu.amrita.aview.gclm.entities.InstituteCategory" />
+		<mapping class="edu.amrita.aview.gclm.entities.InstituteServer" />
+		<mapping class="edu.amrita.aview.gclm.entities.Server" />
+		<mapping class="edu.amrita.aview.gclm.entities.ServerType" />
+		<mapping class="edu.amrita.aview.common.entities.State" />
+		<mapping class="edu.amrita.aview.gclm.entities.ClassServer" />
+		<mapping class="edu.amrita.aview.gclm.entities.PeopleCount" />
+		<mapping class="edu.amrita.aview.audit.entities.Action" />
+		<mapping class="edu.amrita.aview.audit.entities.UserAction" />
+		<mapping class="edu.amrita.aview.audit.entities.AuditUserLogin" />
+		<mapping class="edu.amrita.aview.audit.entities.AuditLecture" />
+		<mapping class="edu.amrita.aview.audit.entities.AuditUserSetting" />
+		<mapping class="edu.amrita.aview.audit.entities.AuditLectureServer" />
+		<mapping class="edu.amrita.aview.gclm.entities.BrandingAttribute" />
+		<mapping class="edu.amrita.aview.gclm.entities.InstituteBranding" />
+		<mapping class="edu.amrita.aview.common.entities.SystemParameter" />
+		<mapping class="edu.amrita.aview.documentsharing.entities.DocumentConversion" />
+		<!-- Classes for Quiz module start -->
+		
+		<mapping class="edu.amrita.aview.evaluation.entities.QbCategory" />
+		<mapping class="edu.amrita.aview.evaluation.entities.QbDifficultyLevel" />
+		<mapping class="edu.amrita.aview.evaluation.entities.QbQuestionType" />
+		<mapping class="edu.amrita.aview.evaluation.entities.QuestionPaper" />
+		<mapping class="edu.amrita.aview.evaluation.entities.QbSubcategory" />
+		<mapping class="edu.amrita.aview.evaluation.entities.QbQuestion" />
+		<mapping class="edu.amrita.aview.evaluation.entities.QuestionPaperQuestion" />
+		<mapping class="edu.amrita.aview.evaluation.entities.Quiz" />
+		<mapping class="edu.amrita.aview.evaluation.entities.QbAnswerChoice" />
+		<mapping class="edu.amrita.aview.evaluation.entities.QuizAnswerChoice" />
+		<mapping class="edu.amrita.aview.evaluation.entities.QuizQuestion" />
+		<mapping class="edu.amrita.aview.evaluation.entities.QuizResponse" />
+		<mapping class="edu.amrita.aview.evaluation.entities.QuizQuestionResponse" />
+		<mapping class="edu.amrita.aview.evaluation.entities.QuizQuestionChoiceResponse" />
+		<!--Currently media based question is not using.So commenting its entry-->		
+		<!--<mapping class="edu.amrita.aview.evaluation.entities.QbQuestionMediaFile" />
+		<mapping class="edu.amrita.aview.evaluation.entities.QuizQuestionMediaFile" />-->
+		
+		<!-- Classes for Quiz module end -->
+		
+		<!-- Classes for aview meeting module start -->
+
+		<!-- Classes for Deployment Activity module start -->
+		<mapping class="edu.amrita.aview.contacts.entities.Contact" />
+		<!-- Classes for Deployment Activity module end -->
+		
+		<!-- Classes for getting Old Recorded lectures start -->
+		<mapping class="edu.amrita.aview.gclm.entities.Lectures" />
+		<!-- Classes for getting Old Recorded lectures end -->
+		
+		<mapping class="edu.amrita.aview.contacts.entities.ContactGroup" />
+		<mapping class="edu.amrita.aview.contacts.entities.GroupUser" />
+		<mapping class="edu.amrita.aview.contacts.entities.GroupTransfer" />
+		<mapping class="edu.amrita.aview.common.entities.SystemParameter" />
+		
+		<!--  Classes for Chat -->
+		<mapping class="edu.amrita.aview.chat.entities.ChatSession"/>
+		<mapping class ="edu.amrita.aview.chat.entities.ChatSessionMember"/>
+		<mapping class ="edu.amrita.aview.chat.entities.ChatMessage"/>
+		
+		<mapping class="edu.amrita.aview.feedback.entities.Module" />
+		<mapping class="edu.amrita.aview.feedback.entities.Feedback" />
+		<mapping class="edu.amrita.aview.feedback.entities.FeedbackIssue" />
+		
+		<!-- Classes for file upload start -->
+		<!-- Not being used now -->
+			<!-- <mapping class="edu.amrita.aview.documentsharing.entities.DocumentConversion" /> -->
+		<!-- Classes for file upload end -->
+		
+						
+	</session-factory>
+
+</hibernate-configuration>

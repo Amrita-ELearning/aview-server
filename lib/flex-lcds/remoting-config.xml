@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service id="remoting-service"
+    class="flex.messaging.services.RemotingService">
+
+    <adapters>
+        <adapter-definition id="java-object" class="flex.messaging.services.remoting.adapters.JavaAdapter" default="true"/>
+    </adapters>
+
+    <default-channels>
+        <channel ref="my-amf"/>
+    </default-channels>
+
+    <!-- Note: XDP based PDF generation requires a valid license. This
+         sample destination will not work unless a valid key is registered for
+         the the fds property in the /WEB-INF/flex/license.properties file.
+     -->
+    <destination channels="my-amf" id="XDPXFAService">
+        <properties>
+            <source>flex.samples.pdfgen.XDPXFAService</source>
+        </properties>        
+    </destination>
+	
+    <destination id="mysqladmin">
+	     <properties>
+	         <source>edu.amrita.aview.common.MySQLAdmin</source>
+	     </properties>
+    </destination>
+	
+	 <destination id="coursehelper">
+		 <properties>
+			 <source>edu.amrita.aview.gclm.helpers.CourseHelper</source>
+		 </properties>
+    </destination>
+	
+    <destination id="nodetypehelper">
+		 <properties>
+			 <source>edu.amrita.aview.gclm.helpers.NodeTypeHelper</source>
+		 </properties>
+    </destination>
+    
+	<destination id="classhelper">
+		<properties>
+			<source>edu.amrita.aview.gclm.helpers.ClassHelper
+			</source>
+		</properties>
+	</destination>
+	
+	<destination id="userhelper">
+		<properties>
+			<source>edu.amrita.aview.gclm.helpers.UserHelper
+			</source>
+		</properties>
+	</destination>
+	
+	<destination id="lecturehelper">
+		<properties>
+			<source>edu.amrita.aview.gclm.helpers.LectureHelper
+			</source>
+		</properties>
+	</destination>
+	
+	<destination id="classregistrationhelper">
+		 <properties>
+			 <source>edu.amrita.aview.gclm.helpers.ClassRegistrationHelper</source>
+		 </properties>
+    </destination>
+	
+	<destination id="qbcategoryhelper">
+		 <properties>
+			 <source>edu.amrita.aview.evaluation.helpers.QbCategoryHelper</source>
+		 </properties>
+    	</destination>
+
+	<destination id="qbsubcategoryhelper">
+		 <properties>
+			 <source>edu.amrita.aview.evaluation.helpers.QbSubcategoryHelper</source>
+		 </properties>
+    	</destination>
+
+	<destination id="qbquestionhelper">
+		 <properties>
+			 <source>edu.amrita.aview.evaluation.helpers.QbQuestionHelper</source>
+		 </properties>
+    	</destination>
+	<destination id="quizhelper">
+		 <properties>
+			 <source>edu.amrita.aview.evaluation.helpers.QuizHelper</source>
+		 </properties>
+    	</destination>
+
+	<destination id="qbquestiontypehelper">
+ 		<properties>
+			<source>edu.amrita.aview.evaluation.helpers.QbQuestionTypeHelper</source>
+		</properties>
+    	</destination>
+	
+	<destination id="qbdifficultylevelhelper">
+ 		<properties>
+			<source>edu.amrita.aview.evaluation.helpers.QbDifficultyLevelHelper</source>
+		</properties>
+    	</destination>
+
+	<destination id="questionpaperhelper">
+ 		<properties>	
+			<source>edu.amrita.aview.evaluation.helpers.QuestionPaperHelper</source>
+		</properties>
+    	</destination>
+
+	<destination id="questionpaperquestionhelper">
+ 		<properties>	
+			<source>edu.amrita.aview.evaluation.helpers.QuestionPaperQuestionHelper</source>
+		</properties>
+    	</destination>
+		
+	<destination id="quizresponsehelper">
+ 		<properties>	
+			<source>edu.amrita.aview.evaluation.helpers.QuizResponseHelper</source>
+		</properties>
+    </destination>	
+	
+	
+	<destination id="institutehelper">
+ 		<properties>	
+			<source>edu.amrita.aview.gclm.helpers.InstituteHelper</source>
+		</properties>
+    </destination>		
+	
+	<destination id="instituteadminhelper">
+ 		<properties>	
+			<source>edu.amrita.aview.gclm.helpers.InstituteAdminUserHelper</source>
+		</properties>
+    </destination>		
+	
+	<destination id="institutecategoryhelper">
+ 		<properties>	
+			<source>edu.amrita.aview.gclm.helpers.InstituteCategoryHelper</source>
+		</properties>
+    </destination>	
+
+	<destination id="districthelper">
+ 		<properties>	
+			<source>edu.amrita.aview.common.helpers.DistrictHelper</source>
+		</properties>
+    </destination>		
+	
+	<destination id="statehelper">
+ 		<properties>	
+			<source>edu.amrita.aview.common.helpers.StateHelper</source>
+		</properties>
+    </destination>
+	
+	<destination id="statushelper">
+ 		<properties>	
+			<source>edu.amrita.aview.common.helpers.StatusHelper</source>
+		</properties>
+    </destination>
+	
+	<destination id="serverhelper">
+ 		<properties>	
+			<source>edu.amrita.aview.gclm.helpers.ServerHelper</source>
+		</properties>
+    </destination>
+	
+	<destination id="servertypehelper">
+ 		<properties>	
+			<source>edu.amrita.aview.gclm.helpers.ServerTypeHelper</source>
+		</properties>
+    </destination>
+	<destination id="analyticshelper">
+		 <properties>
+			 <source>edu.amrita.aview.audit.helpers.AnalyticsHelper</source>
+		 </properties>
+    </destination>
+</service>
