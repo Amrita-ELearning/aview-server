@@ -15,3 +15,6 @@ https://creativecommons.org/licenses/by-sa/4.0/legalcode
 # Installation
 * Supported platforms: Ubuntu and Windows server
 * Install Apache Tomcat 7.0.41 with jre 7
+* Deploy the war files from this project to webroot of tomcat and restart the server.
+* Ensure the mysql.properties point to the correct database server with the appropriate user credentials
+* To verify that everything is working, please point the aview client to this server and check if you can login to the aview platform client
