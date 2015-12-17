@@ -21,8 +21,8 @@ public class LicenseValidator extends TimerTask
 	private static final String LICENSE_SERVER_IP = "licensing.aview.in";
 	private static final String LICENSE_SERVER_PORT = "8080";
 
-	public static boolean validationStatus = true;
-	public static String licenseStatus = "Success";
+	public static boolean validationStatus;
+	public static String licenseStatus;
 	private String productKey = null;
 	private String productName = null;
 	private String productVersion = null;
@@ -158,7 +158,6 @@ public class LicenseValidator extends TimerTask
 		}
 		return filePath;
 	}
-	
 	@Override
 	public void run() 
 	{
