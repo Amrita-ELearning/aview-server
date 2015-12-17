@@ -43,10 +43,11 @@ public class AviewConfig implements ServletContextListener
 		// TODO Auto-generated method stub
 		logger.debug("*********AVIEW App started**************");
 		
+		/*
 		TimerTask timerTask = new LicenseValidator();
 		Timer timer = new Timer();
 		timer.schedule(timerTask, 1000, 60000);
-				
+		*/	
 		//Get all the initial data for the application to run
 		//and store them in cache
 		
